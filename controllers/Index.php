@@ -200,6 +200,8 @@ class Index extends Controller
 
         $type = Request::input('objectType');
 
+        Event::fire('pages.object.delete',  $this->loadObject($type, trim(Request::input('objectPath'))));
+
         $deletedObjects = $this->loadObject($type, trim(Request::input('objectPath')))->delete();
 
         $result = [
