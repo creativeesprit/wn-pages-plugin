@@ -237,7 +237,8 @@ class Page extends ContentBase
     public function delete()
     {
         $result = [];
-
+        Event::fire('pages.object.delete',  $this);
+        
         /*
          * Delete subpages
          */
