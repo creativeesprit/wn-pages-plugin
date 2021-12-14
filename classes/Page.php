@@ -237,7 +237,6 @@ class Page extends ContentBase
     public function delete()
     {
         $result = [];
-        Event::fire('pages.object.delete',  $this);
         
         /*
          * Delete subpages
@@ -252,6 +251,7 @@ class Page extends ContentBase
         $result = array_merge($result, [$this->getBaseFileName()]);
 
         parent::delete();
+        Event::fire('pages.object.delete',  $this);
         
         /*
          * Remove from meta

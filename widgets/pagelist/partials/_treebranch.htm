@@ -11,7 +11,7 @@
         data-status="<?= $groupStatus || !$pageObj->subpages ? 'expanded' : 'collapsed' ?>"
         data-group-id="<?= e($fileName) ?>"
         data-item-path="<?= e($fileName) ?>"
-        <?php if ($searchMode): ?>data-no-drag-mode<?php endif ?>
+        data-no-drag-mode
         data-id="<?= e($dataId) ?>"
     >
         <div>
